@@ -5,11 +5,6 @@ if(!file_exists(dirname(__FILE__)."/files")){
     mkdir(dirname(__FILE__)."/files",0777);
 }
 
-$title = $_SESSION['title'];
-$author = $_SESSION['author'];
-$filename = $_SESSION['filename'];
-$comment = $_SESSION['comment'];
-
 $host = "localhost";
 $user = "root";
 $pass = "dbpass";
@@ -22,7 +17,12 @@ if(rename(dirname(__FILE__)."/usertmp/".$_SESSION['filename'],dirname(__FILE__).
     $link = mysqli_connect($host,$user,$pass,$dbname);
     if(!$link){ exit("データベース接続エラー"); }
 
-    $result = mysqli_query($link,"INSERT INTO $tbname(title,author,filename,comment) VALUE('$title','$author','$filename','$comment')");
+    $escaped_title = mysqli_escape_string($link,$_SESSION['title']);
+    $escaped_author = mysqli_escape_string($link,$_SESSION['author']);
+    $escaped_filename = mysqli_escape_string($link,$_SESSION['filename']);
+    $escaped_comment = mysqli_escape_string($link,$_SESSION['comment']);
+
+    $result = mysqli_query($link,"INSERT INTO $tbname(title,author,filename,comment) VALUE('$escaped_title','$escaped_author','$escaped_filename','$escaped_comment')");
     if(!$result){ exit("データベース登録エラー"); }
     $ID = mysqli_insert_id($link);
 
