@@ -47,7 +47,10 @@ mysqli_close($link);
         </tr>
         <tr>
             <td colspan="2">
-                <form class="delete-form" action="admin_filedelete_complete.php" method="POST">
+                <form class="delete-form" action="admin_filedelete_confirm.php" method="POST">
+                    <input type="hidden" name="title" value="<?=$row['title']?>">
+                    <input type="hidden" name="author" value="<?=$row['author']?>">
+                    <input type="hidden" name="comment" value="<?=$row['comment']?>">
                     <input type="hidden" name="deleteID" value="<?=$row['id']?>">
                     <button type="submit" class="delete-button">削除</button>
                 </form>

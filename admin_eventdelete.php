@@ -44,7 +44,9 @@ mysqli_close($link);
             </tr>
             <tr>
                 <td colspan="2">
-                    <form class="delete-form" action="admin_eventdelete_complete.php" method="POST">
+                    <form class="delete-form" action="admin_eventdelete_confirm.php" method="POST">
+                        <input type="hidden" name="name" value="<?= $row['name']?>">
+                        <input type="hidden" name="deadline" value="<?= $row['deadline']?>">
                         <input type="hidden" name="deleteID" value="<?= $row['id']?>">
                         <button class="delete-button" type="sibmit" class="delete-button">削除</button>
                     </form>
