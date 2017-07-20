@@ -8,12 +8,12 @@ login();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>管理者ページ</title>
+    <title>管理画面</title>
     <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <header>
-        <h1>管理者ページ</h1>
+        <h1>管理画面</h1>
     </header>
     <main>
         <a class="link-button1" href="admin_filedelete.php">ファイル削除</a>

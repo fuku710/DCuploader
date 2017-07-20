@@ -34,7 +34,7 @@ mysqli_close($link);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>トップページ</title>
+    <title>DC作品アップローダー</title>
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="js/script.js" type="text/javascript"></script>
